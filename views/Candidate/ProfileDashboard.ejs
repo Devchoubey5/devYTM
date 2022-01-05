@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/styledash.css">
+    <!-- <link rel="stylesheet" href="../../css/boorstrap.min.css"> -->
+    <link rel="stylesheet" href="../../css/bootstrap.mini.css">
+
+<head>
+    <%include ../partial/Head %>
+    <style>
+        .listpgWraper{
+                 padding:30px;
+        }
+
+    </style>
+</head>
+    
+
+<body>
+  <header>
+    <%include ../partial/Header %>
+  </header>
+ 
+    
+                    
+          <div class="listpgWraper" style="background-color: #f0efef;">
+              
+            <div class="container"  style="width: 100%;">
+                
+                <div class="row">
+                  
+                    <div class="col-md-3">
+                        <ul class="searchList">
+                            <!-- job start -->
+                            <li name="exchange">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span style="font-size: smaller;" lang="en"><span id="Exchange"></span>
+                                        <!--    <div style="float: right;"><span style="font-weight: 700;">Registration No</span> :- <span id="RegId"></span></div>    -->
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="card">
+                            <div class="card-body">
+                              <div class="d-flex flex-column align-items-center text-center">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                                <div class="mt-3">
+                                  <h4>John Doe</h4>
+                                  <p class="text-secondary mb-1">Full Stack Developer</p>
+                                  <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                  <button class="btn btn-primary">Follow</button>
+                                  <button class="btn btn-outline-primary">Message</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                      
+                    <div class="col-md-9">
+
+                  
+
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="background-color: #f0efef;">
+                            <li class="nav-item active" style="margin-bottom: 1%;">
+                                <a class="nav-link active" onclick="FillPersonalDetailSecured('parsedatasecuredpersonaldetails', 'personaldetail')" style="border: groove;" id="pills-Personal-tab" data-toggle="pill" href="#pills-Personal" role="tab" aria-controls="pills-Personal" aria-selected="true"><span lang="en">Personal Details</span></a>
+                              </li>
+                            <li class="nav-item" style="margin-bottom: 1%;">
+                              <a class="nav-link" onclick="educationAPI()" style="border: groove;" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false"><span lang="en">Education </span></a>
+                            </li>
+                            <li class="nav-item" style="margin-bottom: 1%;">
+                              <a class="nav-link noclick" onclick="employementAPI()" style="border: groove;" id="pills-1-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-1" aria-selected="false"><span lang="en">Experience Details</span></a>
+                            </li>
+                            <li class="nav-item" style="margin-bottom: 1%;">
+                              <a class="nav-link noclick" onclick="physicaldetailAPI()" style="border: groove;" id="pills-2-tab" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-2" aria-selected="false"><span lang="en">Applying for Defence services</span></a>
+                            </li>
+    
+                            <li class="nav-item" style="margin-bottom: 1%;">
+                              <a class="nav-link noclick" onclick="languageAPI()" style="border: groove;" id="pills-7-tab" data-toggle="pill" href="#pills-7" role="tab" aria-controls="pills-7" aria-selected="false"><span lang="en">Language Details</span></a>
+                            </li>
+                          
+                              <li class="nav-item" style="margin-bottom: 1%;">
+                                <a class="nav-link noclick" onclick="certification()" style="border: groove;" id="pills-3-tab" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-3" aria-selected="false"><span lang="en">Certification Under Government Scheme</span></a>
+                              </li>
+                            
+                              
+                              <li class="nav-item" style="margin-bottom: 1%;">
+                                <a class="nav-link noclick" onclick="FillResume('parsedatasecuredFillResume');" style="border: groove;" id="pills-12-tab" data-toggle="pill" href="#pills-12" role="tab" aria-controls="pills-12" aria-selected="false"><span lang="en">Attach Resume </span></a>
+                              </li>
+                                <li class="nav-item" style="margin-bottom: 1%;">
+                                    <a class="nav-link noclick" onclick="FillKeySkillSecured('parsedatasecuredkeyskill', 'keyskilldetail');FillSecuredSkills();" style="border: groove;" id="pills-4-tab" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-4" aria-selected="false"><span lang="en">Key Skills</span></a>
+                                  </li>
+    
+                        <!-- </ul>
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="margin-bottom: 30px;"> -->
+                              <li class="nav-item" style="margin-bottom: 1%;">
+                                <a class="nav-link noclick" onclick="TypingStenoAPI()" style="border: groove;" id="pills-5-tab" data-toggle="pill" href="#pills-5" role="tab" aria-controls="pills-5" aria-selected="false"><span lang="en">Typing/Steno Details</span></a>
+                              </li>
+                              <li class="nav-item" style="margin-bottom: 1%;">
+                                <a class="nav-link noclick" onclick="FillIdentificationDetailSecured('parsedatasecuredidentificationdetails', 'identificationtable');" style="border: groove;" id="pills-6-tab" data-toggle="pill" href="#pills-6" role="tab" aria-controls="pills-6" aria-selected="false"><span lang="en">License Details</span></a>
+                              </li>
+                             
+                             
+                              <li class="nav-item" style="margin-bottom: 1%;">
+                                <a class="nav-link noclick" onclick="FillResumeHeadlineSecured('parsedatasecuredresumeheadline', 'detail');" style="border: groove;" id="pills-9-tab" data-toggle="pill" href="#pills-9" role="tab" aria-controls="pills-9" aria-selected="false"><span lang="en">Resume Headline</span></a>
+                              </li>
+                              <li class="nav-item" style="margin-bottom: 1%;">
+                                <a class="nav-link noclick" onclick="itskillAPI()" style="border: groove;" id="pills-10-tab" data-toggle="pill" href="#pills-10" role="tab" aria-controls="pills-10" aria-selected="false"><span lang="en">Additional Skills</span></a>
+                              </li>
+                        <!-- </ul>
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="margin-bottom: 30px;">
+                               -->
+                              <li class="nav-item" style="margin-bottom: 1%;">
+                                <a class="nav-link noclick" onclick="FetchProfileSummary('parsedatasecuredFetchProfileSummary', 'Summarydetail');" style="border: groove;" id="pills-11-tab" data-toggle="pill" href="#pills-11" role="tab" aria-controls="pills-11" aria-selected="false"><span lang="en">Profile Summary</span></a>
+                              </li>
+                              <li class="nav-item" style="margin-bottom: 1%;">
+                                <a class="nav-link noclick" onclick="projectAPI()" style="border: groove;" id="pills-8-tab" data-toggle="pill" href="#pills-8" role="tab" aria-controls="pills-8" aria-selected="false"><span lang="en">Projects </span></a>
+                              </li>
+                             
+                          </ul>
+                          <!-- <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+                          </div> -->
+                       
+                        <ul class="searchList">
+    
+                         
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane active" id="pills-Personal" role="tabpanel" aria-labelledby="pills-Personal-tab">
+                                    <li name="personaldetails">
+                                        <div class="row" style="margin-left: -51px;">
+                                            <div class="col-md-12">
+                                                <div class="col-md-6">
+                                                    <h4 style="font-size: 18px;margin-left: 19px"> <span lang="en">Personal Details</span><a href="#personaldetails" onclick="modal('personaldetails');personaldetailAPI();setTimeout(function(){ FillPersonalDetailSecured('parsedatasecuredpersonaldetails','personaldetail'); }, 1000);"><i class="fa fa-pencil" style="padding-left: 12px;padding-right: 12px"></i></a><span class="profilesubheading" id="personaldetailupdateon"><span lang="en">Updated On</span> 9  August 2021</span></h4>
+                                                </div>
+                                            </div>
+                                            <div id="personaldetail" style=" margin-left: 4%;"><div class="col-md-12"><div class="col-md-4"><p class="profilesubheading"><span lang="en">Date of Birth</span></p><p class="profiledetail">19/06/1998</p></div><div class="col-md-4"><p class="profilesubheading"><span lang="en">Domicile</span></p><p class="profiledetail">MP </p></div><div class="col-md-4"><p class="profilesubheading"><span lang="en">Permanent Address</span></p><p class="profiledetail" style="word-break: break-word;">H.NO 21/12 OLD SUBHASH NAGAR NEAR DURGA MANDIR GOVINDPURA BHOPAL</p></div></div><div class="col-md-12"><div class="col-md-4"><p class="profilesubheading"><span lang="en">Pin&nbsp;</span></p><p class="profiledetail">462023</p></div><div class="col-md-4"><p class="profilesubheading"><span lang="en">Blood Group</span></p><p class="profiledetail">B+ </p></div><div class="col-md-4"><p class="profilesubheading"><span lang="en">Marital Status</span></p><p class="profiledetail">Single </p></div></div><div class="col-md-12"><div class="col-md-4"><p class="profilesubheading"><span lang="en">Category</span></p><p class="profiledetail">UR </p></div><div class="col-md-4"><p class="profilesubheading"><span lang="en">Nationality</span></p><p class="profiledetail">Indian </p></div><div class="col-md-4"><p class="profilesubheading"><span lang="en">Religion</span></p><p class="profiledetail">Hindu</p></div></div><div class="col-md-12"><div class="col-md-4"><p class="profilesubheading"><span lang="en">Sub-Caste</span></p><p class="profiledetail">BRAHMIN</p></div><div class="col-md-4"><p class="profilesubheading"><span lang="en">Differently abled</span></p><p class="profiledetail">No </p></div><div class="col-md-4"><p class="profilesubheading"><span lang="en">Area</span></p><p class="profiledetail">Urban</p></div></div><div class="col-md-12"><div class="col-md-4"><p class="profilesubheading"><span lang="en">Area Of Interest</span></p><p class="profiledetail">job</p></div><div class="col-md-4"><p class="profilesubheading"><span lang="en">Green Card</span></p><p class="profiledetail">0</p></div></div></div>
+                                        </div>
+                                    </li>
+                               
+                               
+    
+                                    
+                            <li name="UploadTab" style="margin-top: -2%;" id="UploadTab">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4 style="font-size: 18px;"><span lang="en">Uploads</span></h4>
+                                        <div class="col-md-4" style="" id="uploaddomiciledoc">
+                                              <div class="listbtn" onclick="modal('domiciledocs')"><a href="#UploadTab"><span lang="en">DOMICILE DOC</span></a></div>
+                                          
+                                           
+                                              
+                                                <a download=""><span class="profilesubheading" id="DomicileFileName" style="color: #263B68;display: none;"></span>
+        
+                                                </a>
+                                                
+                                           
+                                    
+                                    </div>
+                                       
+                                        <div class="col-md-4" style="display:none" id="uploadhandicapdoc">
+                                            <div class="listbtn" onclick="modal('Handicappeddoc')"><a href="#UploadTab"><span lang="en">Differently Abled Doc</span></a></div>
+                                                  
+                                            
+                                                <a download=""><span class="profilesubheading" id="HandicappedFileName" style="color: #263B68;display: none;"></span>
+        
+                                                </a>
+                                                
+                                        </div>
+                                        
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </li>
+    
+                               
+                                </div>
+    
+    
+                                <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    
+                                    <li name="educationtab">
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <h4 style="font-size: 18px;"><span lang="en">Education</span><span style="margin-left:10px;"><a id="addeducation" href="#educationtab"><i class="fa fa-plus-circle"></i></a></span><span class="profilesubheading" id="UpdateOn1" style="padding-left: 12px;"><span lang="en">Updated On</span> 9  August 2021</span>
+                                                </h4>
+                                                <div class="table-responsive">
+                                  <div class="clearfix"></div><table class="table">
+                                                    <tbody><tr class="profilesubheading">
+                                                        <th><span lang="en">Qualification</span></th>
+                                                        <th><span lang="en">Subject Group</span></th>
+                                                        <th><span lang="en">University / Board</span></th>
+                                                        <th><span lang="en">Division</span></th>
+                                                        <th><span lang="en">Percentage</span></th>
+                                                        <th><span lang="en">Passing Out Year</span></th>
+                                                        <th><span lang="en">Modify</span></th>
+                                                        <th><span lang="en">Delete</span></th>
+                                                    </tr>
+                                                    
+                                                    </tbody><tbody id="Education"><tr><td>10th  Standard</td><td>All Subject</td><td>M.P.Board</td><td>Second</td><td>60 %</td><td>2014</td><td><span style="margin-left:10px;"> <a href="#educationtab" onclick="EditeducationDetail('19823104','6','13','ALL%20SUBJECT','60','2','1','1','68','0')"><i class="fa fa-pencil"></i></a></span> </td><td> <span style="margin-left:10px;"><a href="#educationtab" onclick="educationcheck(19823104,'Education')"><i class="fa fa-times" style="padding-left:20px;"></i></a></span> </td></tr><tr><td>12th Standard</td><td>Maths</td><td>M.P.Board</td><td>First</td><td>68 %</td><td>2017</td><td><span style="margin-left:10px;"> <a href="#educationtab" onclick="EditeducationDetail('19823457','8','911','PCM','68','1','1','1','71','0')"><i class="fa fa-pencil"></i></a></span> </td><td> <span style="margin-left:10px;"><a href="#educationtab" onclick="educationcheck(19823457,'Education')"><i class="fa fa-times" style="padding-left:20px;"></i></a></span> </td></tr><tr><td>B.Tech.</td><td>Computer Sc. &amp; Engg.</td><td>RGPV, Bhopal (M.P)</td><td>First</td><td>78 %</td><td>2021</td><td><span style="margin-left:10px;"> <a href="#educationtab" onclick="EditeducationDetail('21458103','42','995','CSE','78','1','5','1','75','0')"><i class="fa fa-pencil"></i></a></span> </td><td> <span style="margin-left:10px;"><a href="#educationtab" onclick="educationcheck(21458103,'Education')"><i class="fa fa-times" style="padding-left:20px;"></i></a></span> </td></tr></tbody>
+                                                </table>
+                                            </div>
+            
+                                                <!-- <div class="col-md-12" id="Education">
+            
+                                                </div> -->
+                                                <div class="clearfix"></div>
+            
+                                            </div>
+            
+                                        </div>
+                                    </li>
+    
+                                </div>
+                               
+                                <div class="tab-pane fade" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
+                                    <li name="employementtab">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h4 style="font-size: 18px;"><span lang="en">Experience Details</span><a onclick="modal('employement')" id="Employment" href="#employementtab"><i class="fa fa-plus-circle" style="padding-left: 12px;padding-right: 12px"></i></a><span class="profilesubheading" id="emphd"><span lang="en">Updated On</span> 9  August 2021</span>
+                                                </h4>
+                                                <div class="col-md-12" id="employementdetail"><p style="padding-top: 15px;font-weight:bold">Software developer<span style="margin-left:10px;"><a href="#employementtab"><i class="fa fa-pencil" onclick="EditEmpDetail('141382','Software%20developer','YASHASWI','1','2021','Jun','0','0','%090%09%20%20%20Lac','%090%09%20%20%20Thousand','SOFTWARE%20DEVELOPMENT','More%20than%203%20Months')"></i></a></span><span style="margin-left:10px;"><a href="#employementtab" onclick="Delete(141382,'Employment')"><i class="fa fa-times" style="padding-left:20px;"></i></a></span></p><p>YASHASWI</p><p class="profileheading">2021, Jun To Present</p><p class="profileheading">Availabe To join in More than 3 Months</p><p class="profileheading" style="word-break: break-word">SOFTWARE DEVELOPMENT</p></div>
+                                                <div class="clearfix"></div>
+                                            </div>
+            
+                                        </div>
+                                    </li>
+                                </div>
+    
+                                <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+                                    <li name="physicalDetails">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h4 style="font-size: 18px;"> <span lang="en">Applying for Defence services</span>
+                                                    <a href="#physicalDetails" onclick="modal('physicalDetails')">
+                                                   <i class="fa fa-pencil" style="padding-left: 12px;padding-right: 12px"></i></a>
+            
+            
+                                                    <div class="col-md-12" style="margin-left: 2%;margin-top: 1%;font-size: medium;">
+                                                        <a href="#physicalDetails" onclick="modal('physicalDetails')"><input id="yes" type="radio" name="checkbox" value="Yes"></a> <span lang="en">Yes</span>
+                                                        <input id="radiono" type="radio" name="checkbox" value="No" style=" margin-left: 5%;" checked=""> <span lang="en">No</span>
+            
+                                                    </div>
+            
+                                                    
+                                                    <span class="profilesubheading" id="physicaldetailupdateon"></span>
+                                                </h4>
+                                            </div>
+                                            <div id="physicaldetail" style="margin-left: 2%;">
+            
+            
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+    
+                                <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab">
+                                    <li name="certificationtab">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h4 style="font-size: 18px;"><span lang="en">Certification Under Government Scheme</span><span style="margin-left:10px;"><a onclick="modal('certification')" href="#certificationtab"><i class="fa fa-plus-circle"></i></a></span><span class="profilesubheading" id="upd" style="padding-left: 12px;"></span>
+                                                </h4>
+                                                <div class="table-responsive">
+                                                <div class="clearfix"></div><table class="table">
+                                                    <tbody><tr class="profilesubheading">
+            
+                                                        <th><span lang="en">Training Program</span></th>
+                                                        <th><span lang="en">Centre</span></th>
+                                                        <th><span lang="en">Scheme</span></th>
+                                                        <th><span lang="en">Duration</span></th>
+                                                        <th><span lang="en">Skill</span></th>
+                                                        <th><span lang="en">Job Preference</span></th>
+                                                        <th><span lang="en">Year</span></th>
+                                                        <th><span lang="en">Modify</span></th>
+                                                        <th><span lang="en">Delete</span></th>
+                                                    </tr>
+                                                    
+                                                    </tbody><tbody id="certificationtable">
+            
+                                                    </tbody>
+                                                </table>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                    </li>
+                                </div>
+    
+                                <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab">
+                                    <li name="keyskillsname">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                               
+                                                    <h4 style="font-size: 18px;"><span lang="en">Key Skills</span><a onclick="modal('keyskill')"><i class="fa fa-pencil" style="padding-left: 12px;    padding-right: 12px"></i></a><span class="profilesubheading" id="keyskillupdateon"></span>
+                                          </h4>
+            
+                                                 <div class="col-md-12" id="keyskilldetail" style="margin-left: 2%;">
+            
+            
+                                                </div> 
+            
+            
+                                                
+            
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+    
+                                <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5-tab">
+                                    <li name="Typingadd">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                               
+                                                    <h4 style="font-size: 18px;"><span lang="en">Typing/Steno Details</span><a onclick="modal('Typing')" href="#Typingadd"><i class="fa fa-plus-circle" style="padding-left: 12px; padding-right: 12px"></i></a>
+                                                            <span class="profilesubheading" id="Typingupdateon"></span></h4>
+                                                            <div class="table-responsive">
+                                                     <div class="clearfix"></div><table class="table">
+                                                    <tbody><tr class="profilesubheading">
+                                                        <th><span lang="en">Language</span></th>
+                                                        <th><span lang="en">Type</span></th>
+                                                        <th><span lang="en">Institute</span></th>
+                                                        <th><span lang="en">Passed Year</span></th>
+                                                        <th><span lang="en">Speed</span></th>
+                                                        <th><span lang="en">Modify</span></th>
+                                                        <th><span lang="en">Delete</span></th>
+                                                    </tr>
+                                                    
+                                                    </tbody><tbody id="Typingdetail">
+            
+                                                    </tbody>
+                                                </table>
+                                                            </div>
+            
+                                            </div>
+                                        </div>
+            
+                                    </li>
+                                </div>
+    
+                                <div class="tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6-tab">
+                                    <li name="identificationtab">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                               
+                                                    <h4 style="font-size: 18px;"><span lang="en">License Details</span><a onclick="modal('dld')" href="#identificationtab"><i class="fa fa-plus-circle" style="padding-left: 12px;padding-right: 12px"></i></a>
+            
+            
+                                                            <span class="profilesubheading" id="idhd"></span> </h4>
+                                                             <span style="color:red;padding-bottom:20px">If you are looking for a driver's job, then only you update the driving license.</span> 
+                                                            <div class="table-responsive" style="padding-top:10px">
+                                                <div class="clearfix"></div><table class="table">
+                                                    <tbody><tr class="profilesubheading">
+                                                        <th><span lang="en">Card Type</span></th>
+                                                        <th><span lang="en">Card Number</span></th>
+                                                        <th><span lang="en">License type</span></th>
+                                                        <th><span lang="en">Issuing Date</span></th>
+                                                        <th><span lang="en">Valid Upto</span></th>
+                                                        <th><span lang="en">Issuing Authority</span></th>
+                                                        <th><span lang="en">Modify</span></th>
+                                                        <th><span lang="en">Delete</span></th>
+                                                    </tr>
+                                                    
+                                                    </tbody><tbody id="identificationtable">
+            
+                                                    </tbody>
+                                                </table>
+                                                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+    
+                                <div class="tab-pane fade" id="pills-7" role="tabpanel" aria-labelledby="pills-7-tab">
+                                    <li name="languagetab">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                
+                                                    <h4 style="font-size: 18px;"><span lang="en">Language Details</span><a onclick="modal('languagedetails')" href="#languagetab"><i class="fa fa-plus-circle" style="padding-left: 12px;padding-right: 12px"></i></a>
+            
+                                                    <span class="profilesubheading" id="languageUpDate"></span> </h4>
+                                                    <div class="table-responsive">
+                                                    <div class="clearfix"></div><table class="table">
+                                                    <tbody><tr class="profilesubheading">
+                                                        <th><span lang="en">Language</span></th>
+                                                        <th><span lang="en" style="margin-left: 3px">Read</span></th>
+                                                        <th><span lang="en">Write</span></th>
+                                                        <th><span lang="en">Speak</span></th>
+                                                        <th><span lang="en">Modify</span></th>
+                                                        <th><span lang="en">Delete</span></th>
+                                                    </tr>
+                                                    
+                                                    </tbody><tbody id="languagetable">
+            
+                                                    </tbody>
+                                                </table>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+    
+                                <div class="tab-pane fade" id="pills-8" role="tabpanel" aria-labelledby="pills-8-tab">
+                                    <li name="Projecttab">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                               
+                                                    <h4 style="font-size: 18px;"><span lang="en">Projects</span>
+                                                        <a onclick="modal('Project')" href="#Projecttab">
+                                                            <i class="fa fa-plus-circle" style="padding-left:12px;padding-right: 12px;"></i></a>
+                                                        
+                                                    <span class="profilesubheading" id="ProjectUpdateON">
+                                                    </span>
+                                                </h4>
+                                                <div class="col-md-12" id="Projectdetail">
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+    
+                                <div class="tab-pane fade" id="pills-9" role="tabpanel" aria-labelledby="pills-9-tab">
+                                    <li name="resumeheadlinetab">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h4 style="font-size: 18px;"><span lang="en"> Resume Headline</span><a onclick="modal('resumeheadline')" id="resumeheadlineid" href="#resumeheadlinetab"><i class="fa fa-pencil" style="padding-left: 12px;padding-right: 12px"></i></a><span class="profilesubheading" id="rsmhd"></span>
+                                                </h4>
+                                                
+                                                <p class="profiledetail" style="word-break: break-word;padding-left: 15px;" id="detail"></p>
+                                                <div class="clearfix"></div>
+                                            </div>
+            
+                                        </div>
+                                    </li>
+                                </div>
+    
+                                <div class="tab-pane fade" id="pills-10" role="tabpanel" aria-labelledby="pills-10-tab">
+                                    <li name="ProfileSkillstab">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                    
+                                                    <h4 style="font-size: 18px;"><span lang="en">Additional Skills</span>
+                                                        <a onclick="modal('itskills')" href="#ProfileSkillstab">
+                                                            <i class="fa fa-plus-circle" style="padding-left:12px;padding-right: 12px;"></i></a>
+                                                        <span class="profilesubheading" id="UpdateOnItskill">
+                                                        </span>
+                                                    </h4>
+            
+                                                   
+                                                <div class="col-md-12">
+                                                    <div class="table-responsive">
+                                                    <div class="clearfix"></div><table class="table">
+                                                        <tbody><tr class="profilesubheading">
+                                                            <th><span lang="en">Skills</span></th>
+                                                            <th><span lang="en">Version</span></th>
+                                                            <th><span lang="en">Last Used</span></th>
+                                                            <th><span lang="en">Experience</span></th>
+                                                            <th><span lang="en">Modify</span></th>
+                                                            <th><span lang="en">Delete</span></th>
+                                                        </tr>
+                                                        
+                                                        </tbody><tbody id="ItSkillTable"> </tbody>
+                                                    </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                    </li>
+                                </div>
+    
+                                <div class="tab-pane fade" id="pills-11" role="tabpanel" aria-labelledby="pills-11-tab">
+                                    <li name="ProfileSummarytab">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h4 style="font-size: 18px;"><span lang="en">Profile Summary</span>
+                                                    <a onclick="modal('profilesummary')" href="#ProfileSummarytab">
+                                                        <i class="fa fa-pencil" style="padding-left:12px;padding-right: 12px;"></i></a>
+                                                    <span class="profilesubheading" id="ProfileummaryUpdateON1">
+                                                    </span>
+                                                </h4>
+                                                <div class="col-md-12" id="Summarydetail" style="word-break: break-word">
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+    
+                                <div class="tab-pane fade" id="pills-12" role="tabpanel" aria-labelledby="pills-12-tab">
+                                    <li name="attacheresumes">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h4 style="font-size: 18px;"> <span lang="en">Attach Resume</span>
+                                                   
+                                                    <!-- <button type="button" class="btn btn-info"  id="add" onclick="modal('attachresume')" href="#attacheresumes"  style="margin-left:756px;margin-top:-30px">ADD</button>
+                                                         -->
+            
+            
+                                                    
+                                                        <a onclick="modal('attachresume')" href="#attacheresumes">
+                                                            <i class="fa fa-plus-circle" style="padding-left:12px;padding-right: 12px;"></i></a>
+                                                        <!-- <span class="profilesubheading" id="AttechResumeUpdate">
+                                                        </span> -->
+                                                    </h4>
+            
+            
+                                                    
+                                                    <a id="filehref" download=""><span class="profilesubheading" id="AttechResumeUpdate" style="color: #263B68;"></span>
+            
+                                                    </a>
+                                                    
+                                                
+                                                
+                                                <p class="profilesubheading"><span lang="en">Resume is the most important document recruiters look for. Recruiters generally do not look at profiles without resumes.</span></p>
+                                                <a href="" +data1[0].resume+""="" target="blank">
+                                                    <p class="profiledetail" id="Resumefetch"> </p>
+                                                </a>
+                                                
+            
+                                                <!-- <div class="col-md-4">
+                                                    <div class="listbtn"><a href="#"
+                                                            onclick="DeleteResume('parsedatasecuredDeleteResume');">Delete
+                                                            Resume</a></div>
+                                                </div> -->
+                                                <div class="clearfix"></div>
+                                            </div>
+            
+                                        </div>
+                                    </li>
+                                </div>
+    
+                               
+                              </div>
+    
+                          
+                       
+                              
+                        </ul>
+       
+    
+                 
+        
+                    </div>
+    
+    
+                </div>
+            </div>
+    
+    
+        </div>
+
+        
+    
+
+  <footer>
+    <%include ../partial/Footer %>
+  </footer>
+  <%include ../partial/Script %>
+   
+  
+ 
+  
+</body>
+
+</html>

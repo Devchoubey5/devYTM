@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <%include ../partial/Head %>
+
+   <body>
+    <!-- Preloader Start -->
+ 
+    <!-- Preloader Start -->
+    <%include ../partial/Header %>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-1 col-md-1" ></div>
+                <div class="col-lg-5 col-md-5 userccount" style="background: linear-gradient(45deg, black, transparent);">
+                    <div class="formpanel">
+                        <p style="color:whitesmoke;text-align:left;font-size: 14px;" lang="en">
+                          Get best matched jobs directly in your mail.
+                        </p>
+                    
+                        <p style="color:whitesmoke;text-align:left;font-size: 14px;" lang="en">
+                          Get relevant job recommendations.
+                        </p>
+                      
+                        <p style="color:whitesmoke;text-align:left;font-size: 14px;" lang="en">
+                          Showcase profile to top companies and consultants.
+                        </p>
+                      
+                        <p style="color:whitesmoke;text-align:left;font-size: 14px;" lang="en">
+                          Know application status on applied jobs.
+                        </p>
+                      
+                        <p style="color:whitesmoke;text-align:left;font-size: 14px;" lang="en">
+                          Allows Searching Job By Key Skills, Designations, and Companies.
+                        </p>
+                      <br>
+                      <br>
+                      <br>
+                        <a style="margin-bottom:25px;" id="btnsubmit" class="btn" href="/JobSeekerRegistration" lang="en"
+                          value="Register Now">
+                          Register Now</a><br />
+                      </div>
+                  
+                </div>
+                <div class="col-lg-5 col-md-5">
+                    <aside class="userccount">
+                        <h4 class="widget_title">Login</h4>
+                        <form action="#">
+                            <div class="row">
+                           <div class="form-group col-lg-12 col-md-12">
+                            
+                              <input type="email" class="form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter User Name'" placeholder="Enter User Name">
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="form-group col-lg-12 col-md-12">
+                            
+                            <input type="email" class="form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Password'" placeholder="Enter Password">
+                         </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2"></div>
+                          
+                            <div id="my_captcha"></div>
+                           
+                         </div> 
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 "></div>
+                            
+                           <a class="genric-btn primary-border circle arrow e-large" type="submit">Login</a>
+                          
+                        </form>
+                     </aside>
+                </div>
+          
+    
+    </div> 
+      
+    
+    
+      
+
+    </main>
+    <%include ../partial/Footer %>
+
+  <!-- JS here -->
+	
+		<!-- All JS Custom Plugins Link Here here -->
+      <%include ../partial/Script %>
+        
+    </body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            __Captcha.init("#my_captcha");
+            $('#__captcha_submit_0').hide()
+        })
+            </script>
+</html>
